@@ -12,7 +12,7 @@ TODO
 
 TODO
 
-###L'exploit... e come migliorare la piattaforma [rai.tv](http://rai.tv)
+###L'exploit (e come migliorare la piattaforma [rai.tv](http://rai.tv))
 
 TODO
 
