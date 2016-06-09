@@ -1,6 +1,6 @@
 # rai.tv-media-downloader
 
-This service is intended to be mainly used from Italian persons.
+This software is intended to be mainly used from Italian persons.
 This document is therefore written in Italian language.
 Nevertheless, code and included comments are in English language.
 
