@@ -15,7 +15,7 @@ Si tratta di una prima versione dello script, migliorabile in termini di leggibi
 Da una shell Bash, lanciare il programma con il seguente comando:
 
 ```sh
-bash raidownloader.sh [-s] <search_string>
+bash rai.sh [-s] <search_string>
 ```
 
 dove il parametro `-s`, opzionale, identifica la ricerca di un episodio di una (mini) serie.
@@ -24,7 +24,7 @@ Il parametro `<search_string>` identifica invece la ricerca da eseguire.
 Un esempio di ricerca è il seguente:
 
 ```sh
-bash raidownloader.sh -s Non dirlo al mio capo
+bash rai.sh -s Non dirlo al mio capo
 ```
 
 Per ogni episodio trovato, verrà richiesto se si intende memorizzarlo/scaricarlo su disco oppure no.
