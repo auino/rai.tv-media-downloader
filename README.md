@@ -46,15 +46,17 @@ dove il parametro `$SEARCH` (parametro `q` passato via HTTP) identifica la strin
 A giugno 2016, il sito ufficiale Rai utilizza tale strumento di ricerca per la ricerca di contenuti all'interno della piattaforma [rai.tv](http://rai.tv).
 
 ####Protezione dei contenuti
-Nel caso in cui il fornitore del servizio intendesse proteggere in modo più appropriato i propri contenuti, in modo tale da evitare un recupero diretto dei video da parte degli utenti, è possibile agire in diversi modi, descritti (brevemente) di seguito.
+Nel caso in cui il fornitore del servizio intendesse proteggere in modo più appropriato i propri contenuti è possibile come descritto (brevemente) di seguito.
+Sebbene i metodi suggeriti portino ad un incremento della sicurezza, essi non forniscono protezione da attacchi avanzati (es. compromissione dei server o nodi vulnerabili, wrapping di librerie, ecc.).
 
-#####HTTPS
+#####Utilizzo del protocollo HTTPS
 Un primo approccio, relativamente rapido ed indolore, prevede l'adozione di una connessione sicura di tipo HTTPS per il recupero dei feed.
 Questo non protegge da eventuali analisi client-side, ma protegge da eventuali operazioni effettuate a livello di rete.
 
 #####Controllo dei certificati SSL lato client
 Per quanto riguarda le app per dispositivi mobili, è possibile evitare attacchi di tipo man-in-the-middle su protocollo HTTPS effettuando un controllo lato client dei certificati SSL del server Rai.
 Tale approccio richiede l'installazione dei certificati all'interno della app.
+In aggiunta, tecniche di code-ofuscation dovrebbero essere adottate per proteggere la app.
 
 #####Pagine web dinamiche e contenuti ad-hoc legati alla sessione
 Lato web, il recupero dei contenuti potrebbe essere generato dinamicamente lato server (con recupero dinamico, o generazione, lato client della porzione di pagina che mostra i contenuti) evitando al client una comunicazione diretta con il servizio che fornisce le API.
