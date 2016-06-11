@@ -8,6 +8,8 @@ Nevertheless, code and included comments are in English language.
 
 Questo semplice script permette di scaricare contenuti dal sito [rai.tv](http://rai.tv).
 
+Si tratta di una prima versione dello script, migliorabile in termini di leggibilità del codice e ottimizzazione.
+
 ###Utilizzo
 
 Da una shell Bash, lanciare il programma con il seguente comando:
@@ -40,20 +42,26 @@ http://www.rai.tv/ricerca/search?q=$SEARCH&sort=date:D:L:d1&filter=0&getfields=*
 ```
 
 dove il parametro `$SEARCH` (parametro `q` passato via HTTP) identifica la stringa ricercata.
+
 A giugno 2016, il sito ufficiale Rai utilizza tale strumento di ricerca per la ricerca di contenuti all'interno della piattaforma [rai.tv](http://rai.tv).
 
 ####Protezione dei contenuti
-Nel caso in cui il fornitore del servizio intendesse proteggere in modo più appropriato i propri contenuti, in modo tale da evitare un recupero diretto dei video da parte degli utenti, è possibile agire in diversi modi, descritti di seguito.
+Nel caso in cui il fornitore del servizio intendesse proteggere in modo più appropriato i propri contenuti, in modo tale da evitare un recupero diretto dei video da parte degli utenti, è possibile agire in diversi modi, descritti (brevemente) di seguito.
 
 #####HTTPS
 Un primo approccio, relativamente rapido ed indolore, prevede l'adozione di una connessione sicura di tipo HTTPS per il recupero dei feed.
 Questo non protegge da eventuali analisi client-side, ma protegge da eventuali operazioni effettuate a livello di rete.
 
 #####Controllo dei certificati SSL lato client
-TODO
+Per quanto riguarda le app per dispositivi mobili, è possibile evitare attacchi di tipo man-in-the-middle su protocollo HTTPS effettuando un controllo lato client dei certificati SSL del server Rai.
+Tale approccio richiede l'installazione dei certificati all'interno della app.
 
 #####Pagine web dinamiche e contenuti ad-hoc legati alla sessione
-TODO
+Lato web, il recupero dei contenuti potrebbe essere generato dinamicamente lato server (con recupero dinamico, o generazione, lato client della porzione di pagina che mostra i contenuti) evitando al client una comunicazione diretta con il servizio che fornisce le API.
+In questo modo il client non potrebbe conoscere l'identità del fornitore di API, attraverso una analisi del traffico generato dalla piattaforma web del servizio.
+
+Inoltre, maggiore sicurezza sarebbe fornita in questo caso da una generazione dinamica dell'URL del contenuto multimediale, vincolandolo alla specifica sessione o associandogli una durata/scadenza temporale.
+In questo modo, non sarebbe possibile per l'utente condividere l'URL di un video, una volta noto l'indirizzo.
 
 ###Disclaimer
 
