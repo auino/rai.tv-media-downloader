@@ -17,7 +17,7 @@ bash raidownloader.sh [-s] <search_string>
 ```
 
 dove il parametro `-s`, opzionale, identifica la ricerca di un episodio di una (mini) serie.
-Il parametro <search_string> identifica invece la ricerca da eseguire.
+Il parametro `<search_string>` identifica invece la ricerca da eseguire.
 
 Un esempio di ricerca è il seguente:
 
