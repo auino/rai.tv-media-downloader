@@ -7,8 +7,8 @@ FILESIZELIMIT=100000
 RETRYNUM=100
 
 PAR_OK=1
-if [ $# -eq 0 ]; then PAR_OK=0; fi
-if [[ "$1" -eq "-s" ]] && [[ $# -le 1 ]]; then PAR_OK=0; fi
+if [ $# -le 0 ]; then PAR_OK=0; fi
+if [[ "$1" == "-s" ]] && [[ $# -le 1 ]]; then PAR_OK=0; fi
 
 if [ $PAR_OK -eq 0 ]; then
 	echo "Usage: bash $0 [-s] <full_name>"
